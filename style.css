@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navigation {
+  width: 100%;
+  display: flex;
+  background: #000000;
+}
+.navigation figure {
+  width: 100px;
+}
+.navigation figure img {
+  width: 100%;
+}
+.navigation .menubar {
+  display: flex;
+  width: -moz-max-content;
+  width: max-content;
+  margin-left: auto;
+  position: relative;
+}
+.navigation .menubar li {
+  position: relative;
+}
+.navigation .menubar li a {
+  text-decoration: none;
+  padding: 20px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+}
+.navigation .menubar li::before {
+  content: "";
+  width: 0%;
+  height: 5px;
+  background: rgb(0, 255, 30);
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  transition: 0.1s;
+}
+.navigation .menubar li:hover::before {
+  width: 100%;
+}
+.navigation .menubar li:hover .submenu {
+  visibility: visible;
+  transform: translate(-50%);
+}
+.navigation .menubar li:hover .megamenu {
+  visibility: visible;
+  transform: translateY(0px);
+}
+.navigation .menubar li .submenu {
+  list-style: none;
+  background: #292727;
+  position: absolute;
+  width: -moz-max-content;
+  width: max-content;
+  left: 50%;
+  transition: 0.5s;
+  transform: translate(-50%);
+  visibility: hidden;
+}
+.navigation .menubar li .submenu::after {
+  width: 50%;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.6);
+  position: absolute;
+  left: 0;
+  top: -6px;
+}
+.navigation .menubar li .submenu li a {
+  line-height: 10px;
+}
+.navigation .menubar li .submenu li .subsubmenu {
+  width: -moz-max-content;
+  width: max-content;
+  background: #353131;
+  position: absolute;
+  top: 0;
+  right: 100%;
+  list-style: none;
+  transition: 0.3s;
+  visibility: hidden;
+  transform: translateX(5%);
+}
+.navigation .menubar li .submenu li:hover .subsubmenu {
+  visibility: visible;
+  transform: translateX(0%);
+}
+.navigation .menubar li .megamenu {
+  width: 100vw;
+  height: -moz-max-content;
+  height: max-content;
+  overflow: hidden;
+  position: fixed;
+  left: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  padding: 10px;
+  background: #3d3b3b;
+  visibility: hidden;
+  transition: 0.1s;
+}
+.navigation .menubar li .megamenu img {
+  width: 100%;
+  height: 216px;
+}/*# sourceMappingURL=style.css.map */
